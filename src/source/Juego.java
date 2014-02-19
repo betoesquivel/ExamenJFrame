@@ -13,5 +13,7 @@ public class Juego {
 
     public static void main(String[] args) {
         JFrameJuego1 miJuego = new JFrameJuego1();
+        miJuego.setVisible(true);
+        miJuego.setSize(800, 500);
     }
 }

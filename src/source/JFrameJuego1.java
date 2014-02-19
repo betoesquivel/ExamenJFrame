@@ -47,8 +47,8 @@ public class JFrameJuego1 extends JFrame implements Runnable, KeyListener, Mouse
     private SoundClip sonido;    // Objeto AudioClip
     private SoundClip bomb;    //Objeto AudioClip 
     //Se cargan los sonidos.
-    private String saURL = "sound/8-bit-explosion.wav";
-    private String baURL = "sound/Explosion.wav";
+    private String saURL = "/sound/8-bit-explosion.wav";
+    private String baURL = "/sound/Explosion.wav";
 
     public JFrameJuego1() {
         init();

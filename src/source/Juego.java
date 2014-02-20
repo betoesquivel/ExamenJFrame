@@ -5,6 +5,8 @@
  */
 package source;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author ppesq
@@ -14,6 +16,7 @@ public class Juego {
     public static void main(String[] args) {
         JFrameJuego1 miJuego = new JFrameJuego1();
         miJuego.setVisible(true);
-        miJuego.setSize(800, 500);
+        miJuego.setSize(600, 500);
+        miJuego.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

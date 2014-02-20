@@ -64,7 +64,7 @@ public class JFrameJuego1 extends JFrame implements Runnable, KeyListener, Mouse
     public void init() {
         ninja = new Bueno();
         
-        this.setSize(800,500);
+        this.setSize(600,500);
         //genera lista de malos de tamanio aleatorio
         //puede ser 6, 10 o 12
         malos = generateRandomMaloList(6, 10, 12);
@@ -243,7 +243,7 @@ public class JFrameJuego1 extends JFrame implements Runnable, KeyListener, Mouse
 
         // Actualiza el Foreground.
         dbg.setColor(getForeground());
-        paint(dbg);
+        paint1(dbg);
 
         // Dibuja la imagen actualizada
         g.drawImage(dbImage, 0, 0, this);

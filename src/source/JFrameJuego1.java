@@ -64,7 +64,7 @@ public class JFrameJuego1 extends JFrame implements Runnable, KeyListener, Mouse
     public void init() {
         ninja = new Bueno();
         
-        this.setSize(600,500);
+        this.setSize(500,350);
         //genera lista de malos de tamanio aleatorio
         //puede ser 6, 10 o 12
         malos = generateRandomMaloList(6, 10, 12);
@@ -267,7 +267,7 @@ public class JFrameJuego1 extends JFrame implements Runnable, KeyListener, Mouse
                 }
                 g.drawImage(paraguas.getImagen(), paraguas.getPosX(), paraguas.getPosY(), this);
             }
-            g.drawString("Score: " + malos.get(0).getCont(), 25, 25);
+            g.drawString("Score: " + malos.get(0).getCont(), 25, 40);
         } else {
             g.drawString("Cargando...", getWidth() / 2, getHeight() / 2);
         }

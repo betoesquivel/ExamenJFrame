@@ -27,8 +27,8 @@ public class Malo extends Base {
     private int direccion;
 
     //Control de colisiones
-    private boolean inCollision;    
-    private int collisionCycles;    
+    private boolean inCollision;
+    private int collisionCycles;
     private final int defaultCollisionCycles = 10;
 
     //URLs de cuadros de las animaciones
@@ -57,7 +57,7 @@ public class Malo extends Base {
         Animacion main = new Animacion();
         Animacion collision = new Animacion();
         lado = DEFAULT_LADO;
-        inCollision = false; 
+        inCollision = false;
         collisionCycles = -1;
         /*
          Agrega todos los cuadros a la animacion main con 100ms de duracion
@@ -78,13 +78,13 @@ public class Malo extends Base {
 
         //direccion inicial del malo
         setCorriendoAnimacionBasica(true);
-        
+
     }
-    
+
     public Malo(int posX, int posY, Animacion animacionBasica) {
         super(posX, posY, animacionBasica);
     }
-    
+
     public Malo(int posX, int posY, Animacion animacionCaminarIzquierda, Animacion animacionCaminarDerecha) {
         super(posX, posY, animacionCaminarIzquierda, animacionCaminarDerecha);
     }
@@ -106,9 +106,9 @@ public class Malo extends Base {
 //        setColisionando(true);
 //        setCorriendoAnimacionBasica(false);
         setCollisionCycles(defaultCollisionCycles);
-        inCollision = true; 
+        inCollision = true;
     }
-    
+
     public void decreaseCollisionCounter() {
         setCollisionCycles(getCollisionCycles() - 1);
     }
@@ -180,7 +180,7 @@ public class Malo extends Base {
 
     /**
      * Metodo randomReset Resetea la posicion del objeto afuera del applet en
-     * todo X
+     * todo Y
      *
      * @param appletWidth
      */
@@ -190,18 +190,24 @@ public class Malo extends Base {
 
         //posiciona al objeto en su mitad
         if (getLado() == 1) {
-            setPosY((int) (Math.random() * (appletHeight / 2 - 1)));
+//            setPosY((int) (Math.random() * (appletHeight - 15)) + 15);
             setPosX((int) (Math.random() * (0 - appletWidth / 4 - appletWidth / 4)));
         } else {
-            setPosY((int) (Math.random() * (appletHeight - appletHeight / 2) + appletHeight / 2));
+//            setPosY((int) (Math.random() * (appletHeight - appletHeight / 2) + appletHeight / 2));
             setPosX((int) (Math.random() * (appletWidth + appletWidth / 4 - appletWidth) + appletWidth));
         }
+        
+        //el +15 es porque ahora el limite inferior en y no es 0 por la barra que agrega el JFrame a la aplicación.
+        setPosY((int) (Math.random() * (appletHeight - 15)) + 15);
+
         //corrige la posicion si se paso
         if (getPosY() > appletHeight - getAlto()) {
             //correct displacement out of screen
             setPosY(appletHeight - getAlto());
         }
+
         
+
 //        setColisionando(false);
 //        setCorriendoAnimacionBasica(true);
         setCollisionCycles(-1);
@@ -210,15 +216,14 @@ public class Malo extends Base {
 
     /* COMPORTAMIENTOS */
     /* SETTERS Y GETTERS */
-    
-    public void setInCollision(boolean b){
-        this.inCollision = b; 
+    public void setInCollision(boolean b) {
+        this.inCollision = b;
     }
-    
-    public boolean isInCollision(){
+
+    public boolean isInCollision() {
         return this.inCollision;
     }
-    
+
     /**
      * Metodo de modificacion setCont
      *
@@ -240,11 +245,11 @@ public class Malo extends Base {
     public int getCont() {
         return cont;
     }
-    
+
     public int getCollisionCycles() {
         return collisionCycles;
     }
-    
+
     public void setCollisionCycles(int collisionCycles) {
         this.collisionCycles = collisionCycles;
     }
@@ -281,7 +286,7 @@ public class Malo extends Base {
     public int getSpeed() {
         return speed;
     }
-    
+
     public void setSpeed(int speed) {
         this.speed = speed;
     }
@@ -295,7 +300,7 @@ public class Malo extends Base {
     public URL[] getUmbrellaURLs() {
         return umbrellaURLs;
     }
-    
+
     public void setUmbrellaURLs(URL[] umbrellaURLs) {
         this.umbrellaURLs = umbrellaURLs;
     }
@@ -309,10 +314,10 @@ public class Malo extends Base {
     public URL[] getUmbrellaCollisionURLs() {
         return umbrellaCollisionURLs;
     }
-    
+
     public void setUmbrellaCollisionURLs(URL[] umbrellaCollisionURLs) {
         this.umbrellaCollisionURLs = umbrellaCollisionURLs;
     }
     /* SETTERS Y GETTERS */
-    
+
 }
